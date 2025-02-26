@@ -22,7 +22,10 @@ let charts = {
   marketShareChart: null,
   investmentReturnChart: null,
   patientSatisfactionChart: null,
-  medicineCostChart: null
+  medicineCostChart: null,
+  tcmChallengeChart: null,  
+  liverDataChart: null,     
+  scientificEvidenceChart: null 
 };
 
 // Initialize Three.js Ring Model
@@ -1817,45 +1820,394 @@ const initGlobalMap = () => {
   }
 };
 
-// Initialize the feature animations
-const initFeatureAnimations = () => {
-  if (typeof gsap === 'undefined') {
-    console.error('GSAP is not loaded');
-    return;
+// Initialize the TCM Challenges Chart
+const initTCMChallengesChart = () => {
+  const tcmChallengeCtx = document.getElementById('tcmChallengeChart');
+  if (tcmChallengeCtx) {
+    // Destroy existing chart if it exists
+    if (charts.tcmChallengeChart) {
+      charts.tcmChallengeChart.destroy();
+      charts.tcmChallengeChart = null;
+    }
+    
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+      createFallbackChart('tcmChallengeChart', '中医面临的挑战');
+      return;
+    }
+    
+    try {
+      charts.tcmChallengeChart = new Chart(tcmChallengeCtx, {
+        type: 'bar',
+        data: {
+          labels: ['缺乏客观数据', '安全性担忧', '个体化差异', '标准化困难', '疗效证明不足'],
+          datasets: [{
+            label: '公众关注度',
+            data: [85, 78, 65, 72, 80],
+            backgroundColor: 'rgba(255, 215, 0, 0.7)',
+            borderColor: 'rgba(255, 215, 0, 1)',
+            borderWidth: 1,
+            hoverBackgroundColor: 'rgba(255, 215, 0, 0.9)',
+            barThickness: 25
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return '关注度: ' + context.parsed.x + '%';
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              grid: { color: 'rgba(255, 255, 255, 0.2)' },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 12,
+                  weight: 'bold'
+                }
+              }
+            },
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.2)' },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 13,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error initializing TCM challenges chart:', error);
+      createFallbackChart('tcmChallengeChart', '中医面临的挑战');
+    }
   }
-  
-  gsap.from('.feature-ring', {
-    scrollTrigger: {
-      trigger: '.features-container',
-      start: 'top center'
-    },
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.2
-  });
+};
 
-  gsap.from('.feature-item', {
-    scrollTrigger: {
-      trigger: '.feature-details',
-      start: 'top center'
-    },
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
-  });
+// Initialize the Liver Function Data Chart
+const initLiverDataChart = () => {
+  const liverDataCtx = document.getElementById('liverDataChart');
+  if (liverDataCtx) {
+    // Destroy existing chart if it exists
+    if (charts.liverDataChart) {
+      charts.liverDataChart.destroy();
+      charts.liverDataChart = null;
+    }
+    
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+      createFallbackChart('liverDataChart', '肝功能数据对比');
+      return;
+    }
+    
+    try {
+      charts.liverDataChart = new Chart(liverDataCtx, {
+        type: 'line',
+        data: {
+          labels: ['用药前', '1周', '2周', '3周', '4周', '5周', '6周'],
+          datasets: [
+            {
+              label: '传统中药无监测',
+              data: [65, 62, 58, 55, 52, 50, 48],
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderWidth: 3,
+              tension: 0.4,
+              fill: true
+            },
+            {
+              label: '脉康宝智能监测',
+              data: [65, 64, 63, 64, 65, 66, 67],
+              borderColor: 'rgba(0, 150, 136, 1)',
+              backgroundColor: 'rgba(0, 150, 136, 0.2)',
+              borderWidth: 3,
+              tension: 0.4,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '肝功能指数对比(70分及以上为健康)',
+              color: '#fff',
+              font: {
+                size: 16,
+                weight: 'bold'
+              },
+              padding: {
+                top: 10,
+                bottom: 20
+              }
+            },
+            legend: {
+              labels: { 
+                color: '#fff',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                },
+                padding: 20
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              titleFont: {
+                size: 16,
+                weight: 'bold'
+              },
+              bodyFont: {
+                size: 14
+              },
+              padding: 15
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 40,
+              max: 90,
+              grid: { color: 'rgba(255, 255, 255, 0.2)' },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 12,
+                  weight: 'bold'
+                }
+              }
+            },
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.2)' },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 12,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error initializing liver data chart:', error);
+      createFallbackChart('liverDataChart', '肝功能数据对比');
+    }
+  }
+};
 
-  gsap.from('.spec-card', {
-    scrollTrigger: {
-      trigger: '.specs-grid',
-      start: 'top center'
-    },
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.1
-  });
+// Initialize Scientific Evidence Comparison Chart
+const initScientificEvidenceChart = () => {
+  const scientificEvidenceCtx = document.getElementById('scientificEvidenceChart');
+  if (scientificEvidenceCtx) {
+    // Destroy existing chart if it exists
+    if (charts.scientificEvidenceChart) {
+      charts.scientificEvidenceChart.destroy();
+      charts.scientificEvidenceChart = null;
+    }
+    
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+      createFallbackChart('scientificEvidenceChart', '科学证据对比');
+      return;
+    }
+    
+    try {
+      charts.scientificEvidenceChart = new Chart(scientificEvidenceCtx, {
+        type: 'radar',
+        data: {
+          labels: ['客观数据', '可量化指标', '疗效追踪', '个体化方案', '风险控制'],
+          datasets: [
+            {
+              label: '传统中医',
+              data: [30, 25, 40, 75, 35],
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+              pointBorderColor: '#fff'
+            },
+            {
+              label: '脉康宝智能中医',
+              data: [85, 80, 85, 80, 75],
+              borderColor: 'rgba(0, 150, 136, 1)',
+              backgroundColor: 'rgba(0, 150, 136, 0.2)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(0, 150, 136, 1)',
+              pointBorderColor: '#fff'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: { color: 'rgba(255, 255, 255, 0.3)' },
+              grid: { color: 'rgba(255, 255, 255, 0.3)' },
+              pointLabels: { 
+                color: '#fff',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                }
+              },
+              ticks: { 
+                beginAtZero: true,
+                color: '#fff',
+                backdropColor: 'transparent',
+                font: {
+                  size: 12,
+                  weight: 'bold'
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              labels: { 
+                color: '#fff',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error initializing scientific evidence chart:', error);
+      createFallbackChart('scientificEvidenceChart', '科学证据对比');
+    }
+  }
+};
+
+// Update investment return chart with better contrast and more appealing visuals
+const updateInvestmentReturnChart = () => {
+  const investmentReturnCtx = document.getElementById('investmentReturnChart');
+  if (investmentReturnCtx) {
+    // Destroy existing chart if it exists
+    if (charts.investmentReturnChart) {
+      charts.investmentReturnChart.destroy();
+      charts.investmentReturnChart = null;
+    }
+    
+    // Check if Chart.js is loaded
+    if (typeof Chart === 'undefined') {
+      createFallbackChart('investmentReturnChart', '投资回报率');
+      return;
+    }
+    
+    try {
+      charts.investmentReturnChart = new Chart(investmentReturnCtx, {
+        type: 'bar',
+        data: {
+          labels: ['第一年', '第二年', '第三年', '第四年', '第五年'],
+          datasets: [{
+            label: '投资回报率 (%)',
+            data: [15, 35, 60, 85, 120],
+            backgroundColor: [
+              'rgba(255, 215, 0, 0.6)',
+              'rgba(255, 215, 0, 0.7)',
+              'rgba(255, 215, 0, 0.8)',
+              'rgba(255, 215, 0, 0.9)',
+              'rgba(255, 215, 0, 1.0)'
+            ],
+            borderColor: 'rgba(255, 255, 255, 0.9)',
+            borderWidth: 2,
+            borderRadius: 8,
+            hoverBackgroundColor: 'rgba(255, 215, 0, 1.0)',
+            hoverBorderColor: '#fff',
+            hoverBorderWidth: 3,
+            barThickness: 40
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              titleFont: {
+                size: 16,
+                weight: 'bold'
+              },
+              bodyFont: {
+                size: 14
+              },
+              callbacks: {
+                label: function(context) {
+                  return '回报率: ' + context.parsed.y + '%';
+                }
+              },
+              padding: 15,
+              displayColors: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { 
+                color: 'rgba(255, 255, 255, 0.3)',
+                drawBorder: true
+              },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                },
+                callback: function(value) {
+                  return value + '%';
+                }
+              }
+            },
+            x: {
+              grid: { 
+                color: 'rgba(255, 255, 255, 0.2)',
+                display: false
+              },
+              ticks: { 
+                color: '#fff',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error initializing investment return chart:', error);
+      createFallbackChart('investmentReturnChart', '投资回报率');
+    }
+  }
 };
 
 // Destroy all existing charts
@@ -2030,9 +2382,20 @@ class Presentation {
         }
         break;
         
-      // Keep the rest of the switch statement the same
-      case 'background-additional':
-        // No specific charts to initialize for this slide
+      case 'tcm-challenges':
+        initTCMChallengesChart();
+        break;
+        
+      case 'herb-risks':
+        initLiverDataChart();
+        break;
+        
+      case 'scientific-evidence':
+        initScientificEvidenceChart();
+        break;
+        
+      case 'market-part45':
+        updateInvestmentReturnChart();
         break;
         
       case 'background-part2':
@@ -2044,7 +2407,6 @@ class Presentation {
         break;
         
       case 'market-part15':
-        // Handle age distribution chart specifically
         const ageDistCtx = document.getElementById('ageDistributionChart');
         if (ageDistCtx) {
           if (charts.ageDist) {
@@ -2101,7 +2463,6 @@ class Presentation {
         break;
         
       case 'market-part25':
-        // Handle competitor chart specifically
         const competitorCtx = document.getElementById('competitorChart');
         if (competitorCtx) {
           if (charts.competitor) {
@@ -2176,7 +2537,6 @@ class Presentation {
         break;
         
       case 'market-part3':
-        // No specific charts to initialize
         break;
         
       case 'market-part4':
@@ -2193,7 +2553,6 @@ class Presentation {
         break;
         
       case 'technology-part15':
-        // Handle element chart specifically
         const elementCtx = document.getElementById('elementChart');
         if (elementCtx) {
           if (charts.elementChart) {
@@ -2280,7 +2639,6 @@ class Presentation {
         break;
         
       case 'technology-part25':
-        // Handle signal processing chart specifically
         const signalCtx = document.getElementById('signalProcessingChart');
         if (signalCtx) {
           if (charts.signalChart) {
@@ -2360,7 +2718,6 @@ class Presentation {
         break;
         
       case 'use-cases-part2':
-        // Handle corporate health chart specifically
         const corporateHealthCtx = document.getElementById('corporateHealthChart');
         if (corporateHealthCtx) {
           if (charts.corporateHealth) {
@@ -2438,7 +2795,6 @@ class Presentation {
         break;
         
       case 'research-part2':
-        // Handle algorithm progress chart specifically
         const algoCtx = document.getElementById('algoProgressChart');
         if (algoCtx) {
           if (charts.algoProgress) {
@@ -2520,11 +2876,9 @@ class Presentation {
       case 'product-features-part2':
       case 'product-features-part15':
       case 'product-features-part25':
-        initFeatureAnimations();
         break;
         
       default:
-        // No specific initialization needed for other slides
         break;
     }
   }
@@ -2552,7 +2906,6 @@ class Presentation {
   }
   
   handleClick(event) {
-    // If click is not on a button or control element
     if (!event.target.closest('.nav-controls') && 
         !event.target.closest('.nav-button') &&
         !event.target.closest('.slide-content')) {
@@ -2561,15 +2914,12 @@ class Presentation {
   }
   
   handleResize() {
-    // Redraw charts on window resize
     const currentSlide = this.slides[this.currentIndex];
     if (currentSlide) {
       const slideId = currentSlide.id;
       
-      // Destroy all charts
       destroyAllCharts();
       
-      // Re-initialize based on current slide
       this.initializeChartsBySlideId(slideId);
     }
   }
@@ -2577,9 +2927,7 @@ class Presentation {
 
 // Initialize presentation when document is ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize presentation navigation
   const presentation = new Presentation();
   
-  // Initialize first slide
   presentation.showSlide(0);
 });

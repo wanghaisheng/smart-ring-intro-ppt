@@ -113,19 +113,60 @@
     </div>
   </section>
 
-  <!-- Additional background slide with the remaining content -->
-  <section id="background-additional" class="slide">
+  <!-- TCM Challenges Slide -->
+  <section id="tcm-challenges" class="slide">
     <div class="slide-content">
-      <h2>项目背景（续）</h2>
+      <h2>中医面临的挑战</h2>
       <div class="market-grid">
         <div class="card">
-          <h3>中医复兴势不可挡</h3>
+          <h3>中医被质疑的核心问题</h3>
           <div class="chart-container">
-            <canvas id="tcmGrowthChart"></canvas>
+            <canvas id="tcmChallengeChart"></canvas>
           </div>
           <ul>
-            <li>国家《"十四五"中医药发展规划》提出"推动中医药与现代科技结合"</li>
-            <li>Z世代养生消费报告：年轻群体对中医养生关注度提升</li>
+            <li><strong>伪科学争议：</strong>气血、阴阳、五行等核心理论缺乏现代科学数据支撑</li>
+            <li><strong>调理效果：</strong>护肝、补肾、去脾湿、养胃等功效难以客观验证</li>
+            <li><strong>个体差异：</strong>"同病异治，异病同治"导致标准化困难</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chinese Herbal Medicine Risks Slide -->
+  <section id="herb-risks" class="slide">
+    <div class="slide-content">
+      <h2>中药的潜在风险</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>中药安全性顾虑</h3>
+          <div class="chart-container">
+            <canvas id="liverDataChart"></canvas>
+          </div>
+          <ul>
+            <li><strong>肝肾负担：</strong>部分中药成分可能对肝肾产生不良影响</li>
+            <li><strong>效果不明：</strong>传统服药方式无法实时监测是否产生预期功效</li>
+            <li><strong>数据缺失：</strong>患者难以判断用药前后身体状况变化是否源于中药</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scientific Evidence Slide -->
+  <section id="scientific-evidence" class="slide">
+    <div class="slide-content">
+      <h2>科学证据与解决方案</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>脉康宝：弥合中医与现代科学的桥梁</h3>
+          <div class="chart-container">
+            <canvas id="scientificEvidenceChart"></canvas>
+          </div>
+          <ul>
+            <li><strong>实时监测：</strong>通过智能戒指监测用户脏腑功能变化，实现调理效果可视化</li>
+            <li><strong>风险预警：</strong>肝肾功能异常及时预警，避免中药过度使用造成损伤</li>
+            <li><strong>数据证明：</strong>将传统中医理论转化为可量化、可验证的数据模型</li>
           </ul>
         </div>
       </div>
@@ -310,28 +351,67 @@
           <thead>
             <tr>
               <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">维度</th>
-              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">竞品（如Oura Ring）</th>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">医院传统四诊设备</th>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">智能手表</th>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">国外戒指（如Oura）</th>
               <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">脉康宝</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">数据维度</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">单次就诊脉搏波、舌象</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">心率、血氧、运动</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">心率、睡眠、体温</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">五脏能量、虚瘀毒湿指数</td>
             </tr>
             <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">采集方式</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">单次、间断</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">连续，夜间佩戴受限</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">连续，西医指标</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">7*24连续，建立个人基线</td>
+            </tr>
+            <tr>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">理论体系</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">传统中医经验诊断</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">西医数据监测</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">西医生物指标</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">中医五行+AI动态辨证</td>
             </tr>
             <tr>
-              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">用户价值</td>
-              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">健康监测</td>
-              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">养生决策支持 + 文化认同</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">用户体验</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">需去医院，不便捷</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">夜间佩戴不舒适</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">健康监测，无养生指导</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">贴合度高，夜间佩戴舒适</td>
+            </tr>
+            <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">数据价值</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">孤立数据，无连续性</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">碎片化健康数据</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">西医健康监测</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">AI大模型数据支持，助力行业发展</td>
+            </tr>
+            <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">个性化方案</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">医生经验判断</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">通用健康建议</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">基础睡眠建议</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">个性化养生调理方案</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      
+      <div class="card" style="margin-top: 1.5rem;">
+        <h3>脉康宝的独特优势</h3>
+        <ul>
+          <li><strong>形态优势：</strong>戒指比手表贴合性更好，用户更易接受夜间佩戴，不干扰睡眠</li>
+          <li><strong>市场差异化：</strong>智能手表市场已被几大厂商占领，用户不会佩戴两块手表</li>
+          <li><strong>数据连续性：</strong>7*24小时监测，建立个人健康基线，实现精准个性化方案</li>
+          <li><strong>行业赋能：</strong>持续收集数据为中医大模型提供训练素材，推动整个行业发展</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -400,10 +480,14 @@
       <div class="market-grid">
         <div class="card">
           <h3>投资回报率预测</h3>
-          <div class="chart-container">
+          <div class="chart-container" style="height: 350px;">
             <canvas id="investmentReturnChart"></canvas>
           </div>
-          <p class="stat-note">第五年投资回报率预计达120%</p>
+          <div style="text-align: center; margin-top: 1rem;">
+            <div style="display: inline-block; background: rgba(0,0,0,0.3); padding: 0.7rem 1.5rem; border-radius: 50px; border: 1px solid var(--accent-gold);">
+              <span style="font-size: 1.2rem; color: var(--accent-gold);">第五年投资回报率预计达 <strong style="font-size: 1.5rem;">120%</strong></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -449,7 +533,7 @@
         <div class="feature-rings">
           <div class="feature-ring">
             <h3>智能硬件设计</h3>
-            <div class="feature-details">
+            <div class="feature-details" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
               <div class="feature-item fade-in">
                 <span class="feature-icon">💪</span>
                 <h4>坚固耐用</h4>
@@ -468,23 +552,24 @@
             </div>
           </div>
         </div>
+        
         <div style="margin-top: 2rem;">
           <div class="card">
-            <h3>智能戒指特点</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem;">
-              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3>中医科学化解决方案</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,215,0,0.3); transition: all 0.3s ease;">
                 <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">01</div>
-                  <h4 style="margin: 0; color: var(--accent-gold);">舒适佩戴</h4>
+                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-weight: bold;">01</div>
+                  <h4 style="margin: 0; color: var(--accent-gold);">实时风险监控</h4>
                 </div>
-                <p>内表面弧形设计，长时间佩戴不压手</p>
+                <p>中药影响下的肝肾功能变化实时追踪</p>
               </div>
-              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,215,0,0.3); transition: all 0.3s ease;">
                 <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">02</div>
-                  <h4 style="margin: 0; color: var(--accent-gold);">精准传感</h4>
+                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-weight: bold;">02</div>
+                  <h4 style="margin: 0; color: var(--accent-gold);">效果可视化</h4>
                 </div>
-                <p>高密度传感阵列，贴合手指采集数据</p>
+                <p>调理前后对比数据，验证养生效果</p>
               </div>
             </div>
           </div>
@@ -812,7 +897,7 @@
     </div>
   </section>
 
-  <!-- Team Section -->
+  <!-- Team Section - Combined -->
   <section id="team" class="slide">
     <div class="slide-content">
       <h2>团队与成果</h2>
@@ -835,15 +920,6 @@
             <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--tech-blue); color:white; border-radius:20px; font-size:0.9rem;">机器学习</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section 2 -->
-  <section id="team-part2" class="slide">
-    <div class="slide-content">
-      <h2>团队与成果（续）</h2>
-      <div class="grid-layout">
         <div class="card fade-in">
           <h3>硬件工程师</h3>
           <p>小米生态链背景，确保传感器精度与量产</p>
@@ -856,7 +932,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Team Achievements Section -->
   <section id="team-achievements" class="slide">
     <div class="slide-content">
@@ -987,7 +1063,7 @@
           <h3 style="text-align: center;">商务合作</h3>
           <div style="text-align: center; margin-top: 1rem;">
             <p>电话：XXX-XXXX-XXXX</p>
-            <p>邮箱：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99faf6f7edf8faedd9f4f8f0f2f8f7fefbf8f6b7faf6f4">[email&#160;protected]</a></p>
+            <p>邮箱：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e0838f8e94818394a08d81898b818e8782818fce838f8d">[email&#160;protected]</a></p>
             <p>地址：深圳市南山区科技园</p>
           </div>
         </div>

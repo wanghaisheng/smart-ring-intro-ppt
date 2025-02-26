@@ -1,132 +1,1011 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="keywords" content="mobile, simulator, mobile design, mobile app">
-  <meta name="author" content="Your Name or Company">
-  <meta http-equiv="Content-Language" content="en">
-
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://www.yourwebsite.com/pc-simulator" />
-
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="PC Simulator">
-  <meta property="og:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta property="og:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta property="og:url" content="https://www.yourwebsite.com/pc-simulator">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PC Simulator">
-  <meta name="twitter:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="twitter:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y) {
-      window.clarity=window.clarity||function(){(clarity.q=clarity.q||[]).push(arguments)};
-      clarity('set', 'anonymizeIP', true);
-      i=l.createElement('script');i.async=1;i.src=r;i.type='text/javascript';
-      t=l.getElementsByTagName('script')[0];t.parentNode.insertBefore(i,t);
-    })(document,window,'script','https://www.clarity.ms/tag/XXXXXX');
-  </script>
-
-  <title>PC Simulator</title>
-
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .mobile-container {
-      width: 360px;
-      height: 640px;
-      border: 16px solid black;
-      border-radius: 16px;
-      background-color: #fff;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .content {
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    /* Adjustments for PC */
-    @media (min-width: 768px) {
-      .mobile-container {
-        width: 600px;
-        height: 1000px;
-      }
-
-      .content {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .mobile-container {
-        width: 800px;
-        height: 1400px;
-      }
-
-      .content {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* Additional responsiveness for larger screens */
-    @media (min-width: 1200px) {
-      body {
-        justify-content: flex-start;
-      }
-
-      .mobile-container {
-        margin-top: 50px;
-      }
-    }
-  </style>
+  <title>脉康宝 - AI赋能中医养生，引领国货健康科技出海</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-
-<body>
-  <div class="mobile-container">
-    <div class="content">
-      <p>Mobile Simulator Screen</p>
-      <p>PC Version: Adjusted for larger screens.</p>
+<body style="overflow: hidden;">
+  <!-- Landing Page -->
+  <section id="landing" class="slide landing-page">
+    <div class="bg-animation">
+      <svg class="taiji" viewBox="0 0 300 300">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path class="taiji-path" d="M150,150 m-75,0 a75,75 0 1,0 150,0 a75,75 0 1,0 -150,0"/>
+        <!-- Digital circuit patterns -->
+        <g class="circuit-patterns" filter="url(#glow)">
+          <path class="circuit-path1" d="M50,150 h50"/>
+          <path class="circuit-path2" d="M200,150 h50"/>
+          <path class="circuit-path3" d="M150,50 v50"/>
+          <path class="circuit-path4" d="M150,200 v50"/>
+        </g>
+        <circle class="dot1" cx="120" cy="150" r="15"/>
+        <circle class="dot2" cx="180" cy="150" r="15"/>
+      </svg>
     </div>
-  </div>
-</body>
+    
+    <div class="landing-content">
+      <h1 class="landing-title">脉康宝</h1>
+      <h2 class="landing-subtitle">AI赋能中医养生，引领国货健康科技出海</h2>
+      <h3 class="landing-description">
+        全球首款中医智能戒指
+        <br>
+        让养生可量化、可追踪、可验证
+      </h3>
+      <div class="product-preview">
+        <div id="ring-3d"></div>
+        <div class="data-visualization">
+          <canvas id="organChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Background Section -->
+  <section id="background" class="slide">
+    <div class="slide-content">
+      <h2>项目背景</h2>
+      <div class="trend-stats grid-layout"></div>
+    </div>
+  </section>
+
+  <!-- 中医复兴势不可挡 Section -->
+  <section id="tcm-revival" class="slide">
+    <div class="slide-content">
+      <h2>中医复兴势不可挡</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>中医复兴势不可挡</h3>
+          <div class="chart-container">
+            <canvas id="tcmGrowthChart"></canvas>
+          </div>
+          <ul>
+            <li>国家《"十四五"中医药发展规划》提出"推动中医药与现代科技结合"</li>
+            <li>Z世代养生消费报告：年轻群体对中医养生关注度提升</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New slide with Industry Pain Points -->
+  <section id="industry-pain-points" class="slide">
+    <div class="slide-content">
+      <h2>行业痛点</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>传统中医养生面临挑战</h3>
+          <ul>
+            <li>传统养生依赖主观经验，缺乏量化标准</li>
+            <li>用户易被误导，行业乱象频发</li>
+            <li>现有健康设备仅监测西医指标（心率、血氧），缺乏中医脏腑功能评估</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="market-grid" style="margin-top: 20px;">
+        <div class="card">
+          <h3>用户痛点</h3>
+          <div class="grid-layout">
+            <div class="stat-item">
+              <div class="stat-value">78<span>%</span></div>
+              <div class="stat-label">用户对中医养生效果存疑</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">65<span>%</span></div>
+              <div class="stat-label">想要但找不到科学养生方法</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional background slide with the remaining content -->
+  <section id="background-additional" class="slide">
+    <div class="slide-content">
+      <h2>项目背景（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>中医复兴势不可挡</h3>
+          <div class="chart-container">
+            <canvas id="tcmGrowthChart"></canvas>
+          </div>
+          <ul>
+            <li>国家《"十四五"中医药发展规划》提出"推动中医药与现代科技结合"</li>
+            <li>Z世代养生消费报告：年轻群体对中医养生关注度提升</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background Section Part 2 -->
+  <section id="background-part2" class="slide">
+    <div class="slide-content">
+      <h2>项目背景（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>国货品牌出海机遇</h3>
+          <div class="chart-container">
+            <canvas id="marketTrendChart"></canvas>
+          </div>
+          <ul>
+            <li>全球健康需求：海外市场对自然疗法关注度上升（美国功能性食品年增长15%）</li>
+            <li>文化输出：以科技化中医为切入点，打造"中国健康方案"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background Section Part 3 -->
+  <section id="background-part3" class="slide">
+    <div class="slide-content">
+      <h2>项目背景（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>AI赋能传统医学</h3>
+          <div class="grid-layout">
+            <div class="stat-item">
+              <h4>舌象AI识别准确率</h4>
+              <div class="stat-value">90<span>%</span></div>
+            </div>
+            <div class="stat-item">
+              <h4>AI辅助诊断提升率</h4>
+              <div class="stat-value">40<span>%</span></div>
+            </div>
+          </div>
+          <ul>
+            <li>现有健康设备仅监测西医指标（心率、血氧），缺乏中医脏腑功能评估</li>
+            <li>AI算法破解中医"模糊化"难题，实现辨证数据化</li>
+            <li>远程问诊需求年增长50%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section id="solution" class="slide">
+    <div class="slide-content">
+      <h2>产品解决方案</h2>
+      <div class="card">
+        <h3>一句话定义</h3>
+        <p class="highlight-text">基于AI与中医理论的智能健康管理工具，专注脏腑功能动态监测与个性化养生建议</p>
+        <h3>合规声明</h3>
+        <p>非医疗器械，数据仅供参考，不替代医疗诊断</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Features -->
+  <section id="solution-features" class="slide">
+    <div class="slide-content">
+      <h2>产品解决方案（续）</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <span class="icon">📱</span>
+          <h3>多模态传感</h3>
+          <ul>
+            <li>脉搏波谐波分解（C0-C10对应五脏六腑）</li>
+            <li>体表电导率动态监测（十二经络虚实状态）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="icon">🧠</span>
+          <h3>AI算法模型</h3>
+          <ul>
+            <li>五行生克动态评分系统</li>
+            <li>虚瘀毒湿指数预测模型（准确率85%）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Target Users -->
+  <section id="solution-users" class="slide">
+    <div class="slide-content">
+      <h2>产品解决方案（续）</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <span class="icon">📊</span>
+          <h3>功能亮点(ToC)</h3>
+          <ul>
+            <li>实时预警"肝毒指数超标""肾虚风险"</li>
+            <li>个性化调理方案（食疗、穴位按摩、中成药建议）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="icon">🎯</span>
+          <h3>功能亮点(ToB)</h3>
+          <ul>
+            <li>企业员工亚健康大数据分析</li>
+            <li>药企产品效果追踪（如"六味地黄丸对肾阴能量提升效果验证"）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 1 -->
+  <section id="market" class="slide">
+    <div class="slide-content">
+      <h2>市场分析</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>市场规模</h3>
+          <div class="chart-container">
+            <canvas id="marketSizeChart"></canvas>
+          </div>
+          <p class="stat-note">中医养生市场规模超万亿，智能硬件年增速25%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 1.5 -->
+  <section id="market-part15" class="slide">
+    <div class="slide-content">
+      <h2>市场分析（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>用户年龄分布</h3>
+          <div class="chart-container">
+            <canvas id="ageDistributionChart"></canvas>
+          </div>
+          <p class="stat-note">年轻群体对中医养生关注度提升</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Market Analysis Section 2 -->
+  <section id="market-part2" class="slide">
+    <div class="slide-content">
+      <h2>市场分析（续）</h2>
+      <div class="card">
+        <h3>全球市场布局</h3>
+        <div class="chart-container">
+          <canvas id="globalShareChart"></canvas>
+        </div>
+        <p class="stat-note">瞄准欧美亚健康人群，预计3年出海渗透率10%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 2.5 -->
+  <section id="market-part25" class="slide">
+    <div class="slide-content">
+      <h2>市场分析（续）</h2>
+      <div class="card">
+        <h3>竞品对比分析</h3>
+        <div class="chart-container">
+          <canvas id="competitorChart"></canvas>
+        </div>
+        <p class="stat-note">在技术创新和用户满意度方面具有显著优势</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Market Analysis Section 3 -->
+  <section id="market-part3" class="slide">
+    <div class="slide-content">
+      <h2>竞品对比</h2>
+      <div class="card">
+        <table style="width:100%; border-collapse:collapse; margin:1rem 0;">
+          <thead>
+            <tr>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">维度</th>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">竞品（如Oura Ring）</th>
+              <th style="padding:0.8rem; background:var(--primary-green); color:white; text-align:left; border:1px solid rgba(255,255,255,0.1);">脉康宝</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">数据维度</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">心率、睡眠、体温</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">五脏能量、虚瘀毒湿指数</td>
+            </tr>
+            <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">理论体系</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">西医生物指标</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">中医五行+AI动态辨证</td>
+            </tr>
+            <tr>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">用户价值</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">健康监测</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">养生决策支持 + 文化认同</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 3.5 -->
+  <section id="market-part35" class="slide">
+    <div class="slide-content">
+      <h2>商业模式</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <span class="icon">📈</span>
+          <h3>硬件销售</h3>
+          <ul>
+            <li>戒指（499-1299元）+ 家庭/企业套餐</li>
+            <li>客单价3000-5万元</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="icon">🌏</span>
+          <h3>增值服务</h3>
+          <ul>
+            <li>会员订阅（AI养生师、专家咨询，39元/月）</li>
+            <li>数据服务（药企/研究机构采购，10万元/年起）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 3.6 -->
+  <section id="market-part36" class="slide">
+    <div class="slide-content">
+      <h2>出海路径</h2>
+      <div class="card">
+        <span class="icon">🚀</span>
+        <h3>分步海外市场策略</h3>
+        <ul>
+          <li>第一阶段：东南亚华人市场（文化相近）</li>
+          <li>第二阶段：欧美市场（主打"Stress Relief""Natural Wellness"概念）</li>
+          <li>第三阶段：全球品牌建设，构建中医养生领导品牌</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Market Analysis Section 4 -->
+  <section id="market-part4" class="slide">
+    <div class="slide-content">
+      <h2>市场分析（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>细分市场占比</h3>
+          <div class="chart-container">
+            <canvas id="marketShareChart"></canvas>
+          </div>
+          <p class="stat-note">脉康宝可占据20%的潜在市场份额</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 4.5 -->
+  <section id="market-part45" class="slide">
+    <div class="slide-content">
+      <h2>市场分析（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>投资回报率预测</h3>
+          <div class="chart-container">
+            <canvas id="investmentReturnChart"></canvas>
+          </div>
+          <p class="stat-note">第五年投资回报率预计达120%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Market Analysis Section 5 -->
+  <section id="market-part5" class="slide">
+    <div class="slide-content">
+      <h2>AI辅助养生的健康效益</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>患者满意度比较</h3>
+          <div class="chart-container">
+            <canvas id="patientSatisfactionChart"></canvas>
+          </div>
+          <p class="stat-note">使用脉康宝后满意度提升25%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Analysis Section 5.5 -->
+  <section id="market-part55" class="slide">
+    <div class="slide-content">
+      <h2>AI辅助养生的健康效益（续）</h2>
+      <div class="market-grid">
+        <div class="card">
+          <h3>药物使用量变化趋势</h3>
+          <div class="chart-container">
+            <canvas id="medicineCostChart"></canvas>
+          </div>
+          <p class="stat-note">定期使用脉康宝12个月后，药物使用量减少50%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Features Section 1 -->
+  <section id="product-features" class="slide">
+    <div class="slide-content">
+      <h2>产品特色</h2>
+      <div class="features-container">
+        <div class="feature-rings">
+          <div class="feature-ring">
+            <h3>智能硬件设计</h3>
+            <div class="feature-details">
+              <div class="feature-item fade-in">
+                <span class="feature-icon">💪</span>
+                <h4>坚固耐用</h4>
+                <p>航空级钛合金材质，经久耐用</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">🔋</span>
+                <h4>持久续航</h4>
+                <p>7天超长续航，随时随地监测</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">💧</span>
+                <h4>防水防尘</h4>
+                <p>IP68级防护，可水下佩戴</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 2rem;">
+          <div class="card">
+            <h3>智能戒指特点</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem;">
+              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">01</div>
+                  <h4 style="margin: 0; color: var(--accent-gold);">舒适佩戴</h4>
+                </div>
+                <p>内表面弧形设计，长时间佩戴不压手</p>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px;">02</div>
+                  <h4 style="margin: 0; color: var(--accent-gold);">精准传感</h4>
+                </div>
+                <p>高密度传感阵列，贴合手指采集数据</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Features Section 1.5 -->
+  <section id="product-features-part15" class="slide">
+    <div class="slide-content">
+      <h2>产品核心功能</h2>
+      <div class="features-container">
+        <div class="feature-rings">
+          <div class="feature-ring">
+            <h3>中医诊断体系</h3>
+            <div class="feature-details">
+              <div class="feature-item fade-in">
+                <span class="feature-icon">❤️</span>
+                <h4>脉诊监测</h4>
+                <p>28项特征分析，识别20种脉象</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">🔄</span>
+                <h4>经络评估</h4>
+                <p>实时监测12条经络能量平衡</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">⚡</span>
+                <h4>五行评估</h4>
+                <p>金木水火土五行平衡分析</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+          <div class="card">
+            <h3>健康管理闭环</h3>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 1rem; gap: 1.5rem;">
+              <div style="text-align: center; position: relative;">
+                <div style="width: 80px; height: 80px; background: rgba(255,215,0,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                  <span style="font-size: 2rem; color: var(--accent-gold);">📊</span>
+                </div>
+                <h4 style="margin-top: 0.5rem; color: var(--accent-gold);">数据采集</h4>
+                <div style="position: absolute; top: 40px; right: -25px; transform: rotate(0deg); color: var(--accent-gold); font-size: 1.5rem;">→</div>
+              </div>
+              
+              <div style="text-align: center; position: relative;">
+                <div style="width: 80px; height: 80px; background: rgba(0,150,136,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                  <span style="font-size: 2rem; color: var(--primary-green);">🧠</span>
+                </div>
+                <h4 style="margin-top: 0.5rem; color: var(--primary-green);">AI分析</h4>
+                <div style="position: absolute; top: 40px; right: -25px; transform: rotate(0deg); color: var(--primary-green); font-size: 1.5rem;">→</div>
+              </div>
+              
+              <div style="text-align: center; position: relative;">
+                <div style="width: 80px; height: 80px; background: rgba(2,136,209,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                  <span style="font-size: 2rem; color: var(--tech-blue);">💡</span>
+                </div>
+                <h4 style="margin-top: 0.5rem; color: var(--tech-blue);">调理建议</h4>
+                <div style="position: absolute; top: 40px; right: -25px; transform: rotate(0deg); color: var(--tech-blue); font-size: 1.5rem;">→</div>
+              </div>
+              
+              <div style="text-align: center;">
+                <div style="width: 80px; height: 80px; background: rgba(156,39,176,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                  <span style="font-size: 2rem; color: #9c27b0;">📈</span>
+                </div>
+                <h4 style="margin-top: 0.5rem; color: #9c27b0;">效果追踪</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Features Section 2 -->
+  <section id="product-features-part2" class="slide">
+    <div class="slide-content">
+      <h2>智能养生系统</h2>
+      <div class="features-container">
+        <div class="feature-rings">
+          <div class="feature-ring">
+            <h3>AI诊断系统</h3>
+            <div class="feature-details">
+              <div class="feature-item fade-in">
+                <span class="feature-icon">🤖</span>
+                <h4>AI诊断</h4>
+                <p>90%辨证准确率，匹配中医证型</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">📱</span>
+                <h4>APP联动</h4>
+                <p>实时数据同步，历史对比分析</p>
+              </div>
+              <div class="feature-item fade-in">
+                <span class="feature-icon">⚡</span>
+                <h4>智能预警</h4>
+                <p>亚健康风险早期预警提醒</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card" style="margin-top: 1.5rem;">
+          <h3>个性化调理方案</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid rgba(255,215,0,0.3);">
+              <span style="font-size: 2.5rem; color: var(--accent-gold);">🍵</span>
+              <h4 style="margin: 0.5rem 0; color: var(--accent-gold);">中药食疗</h4>
+              <p>基于体质定制食疗方案</p>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid rgba(0,150,136,0.3);">
+              <span style="font-size: 2.5rem; color: var(--primary-green);">👋</span>
+              <h4 style="margin: 0.5rem 0; color: var(--primary-green);">穴位按摩</h4>
+              <p>精准推荐对应穴位疗法</p>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid rgba(2,136,209,0.3);">
+              <span style="font-size: 2.5rem; color: var(--tech-blue);">🧘</span>
+              <h4 style="margin: 0.5rem 0; color: var(--tech-blue);">经络运动</h4>
+              <p>针对性经络调理动作</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Features Section 2.5 -->
+  <section id="product-features-part25" class="slide">
+    <div class="slide-content">
+      <h2>产品规格</h2>
+      <div style="margin-bottom: 1.5rem;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3 style="text-align: center; margin-bottom: 1.5rem;">脉康宝智能戒指</h3>
+          <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+            <div style="width: 200px; height: 200px; background: rgba(0,0,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-gold);">
+              <div style="width: 80%; height: 80%; background: rgba(0,0,0,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--accent-gold);">
+                <span style="font-size: 3rem; color: var(--accent-gold);">戒指</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="specs-grid">
+          <div class="spec-card fade-in">
+            <h4>处理器</h4>
+            <p>双核ARM Cortex-M4</p>
+            <div style="width: 50px; height: 4px; background: var(--primary-green); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">超低功耗设计</p>
+          </div>
+          <div class="spec-card fade-in">
+            <h4>传感器</h4>
+            <p>多模态传感阵列</p>
+            <div style="width: 50px; height: 4px; background: var(--primary-green); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">光电容积脉搏波+温度</p>
+          </div>
+          <div class="spec-card fade-in">
+            <h4>电池容量</h4>
+            <p>120mAh锂聚合物</p>
+            <div style="width: 50px; height: 4px; background: var(--primary-green); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">7天超长续航</p>
+          </div>
+          <div class="spec-card fade-in">
+            <h4>防水等级</h4>
+            <p>IP68 5ATM</p>
+            <div style="width: 50px; height: 4px; background: var(--primary-green); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">游泳佩戴无忧</p>
+          </div>
+          <div class="spec-card fade-in">
+            <h4>材质</h4>
+            <p>航空级钛合金</p>
+            <div style="width: 50px; height: 4px; background: var(--accent-gold); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">轻量坚固设计</p>
+          </div>
+          <div class="spec-card fade-in">
+            <h4>尺寸选择</h4>
+            <p>16-22mm可调</p>
+            <div style="width: 50px; height: 4px; background: var(--accent-gold); margin: 0.5rem auto;"></div>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">适应不同手型</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Deep Dive Section 1 -->
+  <section id="technology" class="slide">
+    <div class="slide-content">
+      <h2>核心技术创新</h2>
+      <div class="tech-innovation">
+        <h3>多模态传感</h3>
+        <div class="tech-diagram-container">
+          <canvas id="pulseAnalysisChart"></canvas>
+        </div>
+        <ul class="tech-features-list">
+          <li>脉搏波谐波分解技术（C0-C10对应五脏六腑）</li>
+          <li>60Hz高精度采样率，捕捉微细脉象变化</li>
+          <li>28项特征点AI分析，准确识别脉型</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Deep Dive Section 1.5 -->
+  <section id="technology-part15" class="slide">
+    <div class="slide-content">
+      <h2>核心技术创新（续）</h2>
+      <div class="tech-innovation">
+        <h3>五行能量评估系统</h3>
+        <div class="tech-diagram-container">
+          <canvas id="elementChart"></canvas>
+        </div>
+        <ul class="tech-features-list">
+          <li>五行生克动态评分系统</li>
+          <li>体表电导率监测（十二经络虚实状态）</li>
+          <li>个性化平衡调理方案推荐</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Technology Deep Dive Section 2 -->
+  <section id="technology-part2" class="slide">
+    <div class="slide-content">
+      <h2>核心技术创新（续）</h2>
+      <div class="tech-innovation">
+        <h3>虚瘀毒湿指数预测模型</h3>
+        <div class="tech-diagram-container">
+          <canvas id="algoAccuracyChart"></canvas>
+        </div>
+        <div style="margin-top: 1rem;">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">算法流程</h4>
+          <div style="display: flex; align-items: center; margin: 0.7rem 0; background: rgba(0,0,0,0.2); padding: 0.7rem; border-radius: 8px;">
+            <span style="font-size: 1.2rem; color: var(--accent-gold); margin-right: 1rem; min-width: 30px; text-align: center;">01</span>
+            <div>
+              <h5 style="margin-bottom: 0.3rem;">信号预处理</h5>
+              <p>降噪、滤波、标准化</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; margin: 0.7rem 0; background: rgba(0,0,0,0.2); padding: 0.7rem; border-radius: 8px;">
+            <span style="font-size: 1.2rem; color: var(--accent-gold); margin-right: 1rem; min-width: 30px; text-align: center;">02</span>
+            <div>
+              <h5 style="margin-bottom: 0.3rem;">特征提取</h5>
+              <p>时域/频域特征分析</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; margin: 0.7rem 0; background: rgba(0,0,0,0.2); padding: 0.7rem; border-radius: 8px;">
+            <span style="font-size: 1.2rem; color: var(--accent-gold); margin-right: 1rem; min-width: 30px; text-align: center;">03</span>
+            <div>
+              <h5 style="margin-bottom: 0.3rem;">模型训练</h5>
+              <p>深度学习网络优化</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Deep Dive Section 2.5 -->
+  <section id="technology-part25" class="slide">
+    <div class="slide-content">
+      <h2>核心技术创新（续）</h2>
+      <div class="tech-innovation">
+        <h3>信号处理技术</h3>
+        <div class="tech-diagram-container">
+          <canvas id="signalProcessingChart"></canvas>
+        </div>
+        <ul class="tech-features-list">
+          <li>自适应滤波算法，有效去除环境干扰</li>
+          <li>小波变换分析，提取特征信息</li>
+          <li>多模态数据融合，提高诊断准确性</li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; justify-content: center;">
+          <div style="text-align: center; padding: 0.8rem; background: rgba(0,0,0,0.2); border-radius: 8px; min-width: 100px;">
+            <div style="font-size: 1.5rem; color: var(--accent-gold);">99%</div>
+            <div style="margin-top: 0.5rem;">抗干扰率</div>
+          </div>
+          <div style="text-align: center; padding: 0.8rem; background: rgba(0,0,0,0.2); border-radius: 8px; min-width: 100px;">
+            <div style="font-size: 1.5rem; color: var(--accent-gold);">&lt;1ms</div>
+            <div style="margin-top: 0.5rem;">处理延迟</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="slide">
+    <div class="slide-content">
+      <h2>应用场景展示</h2>
+      <div class="card">
+        <h3>个人用户</h3>
+        <div class="chart-container">
+          <canvas id="userProgressChart"></canvas>
+        </div>
+        <h4 style="color: var(--accent-gold); margin: 1rem 0 0.5rem;">张女士的养生之旅</h4>
+        <ul>
+          <li>发现肝火偏旺</li>
+          <li>定制调理方案（食疗、穴位按摩）</li>
+          <li>30天改善追踪</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section 2 -->
+  <section id="use-cases-part2" class="slide">
+    <div class="slide-content">
+      <h2>应用场景展示（续）</h2>
+      <div class="card">
+        <h3>企业健康管理</h3>
+        <div class="chart-container">
+          <canvas id="corporateHealthChart"></canvas>
+        </div>
+        <h4 style="color: var(--accent-gold); margin: 1rem 0 0.5rem;">科技公司亚健康改善项目</h4>
+        <ul>
+          <li>百人团队数据分析</li>
+          <li>团队健康报告</li>
+          <li>干预效果评估</li>
+          <li>减少员工医疗支出18%</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="slide">
+    <div class="slide-content">
+      <h2>团队与成果</h2>
+      <div class="grid-layout">
+        <div class="card fade-in">
+          <h3>中医专家</h3>
+          <p>XX中医药大学教授，负责理论模型构建</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--primary-green); color:white; border-radius:20px; font-size:0.9rem;">五行理论</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--primary-green); color:white; border-radius:20px; font-size:0.9rem;">辨证论治</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--primary-green); color:white; border-radius:20px; font-size:0.9rem;">中医诊断学</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <h3>AI科学家</h3>
+          <p>前华为算法团队，主导信号处理与深度学习</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--tech-blue); color:white; border-radius:20px; font-size:0.9rem;">深度学习</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--tech-blue); color:white; border-radius:20px; font-size:0.9rem;">信号处理</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--tech-blue); color:white; border-radius:20px; font-size:0.9rem;">机器学习</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section 2 -->
+  <section id="team-part2" class="slide">
+    <div class="slide-content">
+      <h2>团队与成果（续）</h2>
+      <div class="grid-layout">
+        <div class="card fade-in">
+          <h3>硬件工程师</h3>
+          <p>小米生态链背景，确保传感器精度与量产</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--accent-gold); color:var(--text-dark); border-radius:20px; font-size:0.9rem;">传感器研发</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--accent-gold); color:var(--text-dark); border-radius:20px; font-size:0.9rem;">硬件集成</span>
+            <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--accent-gold); color:var(--text-dark); border-radius:20px; font-size:0.9rem;">工业设计</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team Achievements Section -->
+  <section id="team-achievements" class="slide">
+    <div class="slide-content">
+      <h2>团队成果</h2>
+      <div class="grid-layout">
+        <div class="card fade-in">
+          <h3>技术验证</h3>
+          <div style="font-size: 2.5rem; color: var(--accent-gold); margin: 1rem 0; text-align: center;">82</div>
+          <p>临床验证Kappa值</p>
+          <p class="detail">完成1000例临床数据对比</p>
+        </div>
+        <div class="card fade-in">
+          <h3>用户反馈</h3>
+          <div style="font-size: 2.5rem; color: var(--accent-gold); margin: 1rem 0; text-align: center;">68</div>
+          <p>用户净推荐值(NPS)</p>
+          <p class="detail">内测用户复购率45%</p>
+        </div>
+        <div class="card fade-in">
+          <h3>知识产权</h3>
+          <div style="font-size: 2.5rem; color: var(--accent-gold); margin: 1rem 0; text-align: center;">12</div>
+          <p>专利申请总数</p>
+          <p class="detail">含3项国际PCT专利</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Development Section -->
+  <section id="research" class="slide">
+    <div class="slide-content">
+      <h2>研发创新</h2>
+      <div class="card">
+        <h3>临床研究</h3>
+        <div class="chart-container">
+          <canvas id="clinicalChart"></canvas>
+        </div>
+        <h4 style="color: var(--accent-gold); margin: 1rem 0 0.5rem;">多中心验证研究</h4>
+        <p>与三家三甲医院合作，完成1000例对照研究</p>
+        <p>辨证一致性Kappa值0.82</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Development Section 2 -->
+  <section id="research-part2" class="slide">
+    <div class="slide-content">
+      <h2>研发创新（续）</h2>
+      <div class="card">
+        <h3>算法迭代</h3>
+        <div class="chart-container">
+          <canvas id="algoProgressChart"></canvas>
+        </div>
+        <h4 style="color: var(--accent-gold); margin: 1rem 0 0.5rem;">深度学习模型优化</h4>
+        <p>准确率从75%提升至90%</p>
+        <p>推理速度提升300%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Vision Section -->
+  <section id="global-vision" class="slide">
+    <div class="slide-content">
+      <h2>全球化愿景</h2>
+      <div style="position: relative; height: 350px; background: rgba(0,0,0,0.3); border-radius: 16px; padding: 1rem; margin-bottom: 1.5rem;">
+        <canvas id="globalExpansionMap"></canvas>
+      </div>
+      <div class="grid-layout">
+        <div class="card fade-in">
+          <h3>2024</h3>
+          <p>东南亚市场布局</p>
+          <ul>
+            <li>东南亚华人市场（文化相近）</li>
+            <li>与本地养生品牌合作</li>
+          </ul>
+        </div>
+        <div class="card fade-in">
+          <h3>2025-2026</h3>
+          <p>欧美市场进入与全球生态构建</p>
+          <ul>
+            <li>主打"Stress Relief""Natural Wellness"概念</li>
+            <li>开放开发者平台，孵化中医AI算法生态</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Plans Section -->
+  <section id="future-plans" class="slide">
+    <div class="slide-content">
+      <h2>参赛诉求与规划</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <h3>参赛诉求</h3>
+          <ul>
+            <li>对接三甲医院科研合作</li>
+            <li>海外渠道拓展</li>
+            <li>申请"中医科技专项补贴"</li>
+            <li>跨境数据合规指导</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>未来规划</h3>
+          <ul>
+            <li><strong>产品迭代</strong>：2024年推出舌象监测模块，实现"脉诊+舌诊"双模态分析</li>
+            <li><strong>市场拓展</strong>：2025年进入北美市场，与功能性食品品牌联合营销</li>
+            <li><strong>生态构建</strong>：开放开发者平台，孵化中医AI算法生态</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="slide">
+    <div class="slide-content">
+      <h2>联系我们</h2>
+      <div class="grid-layout">
+        <div class="card">
+          <span class="icon" style="display: block; text-align: center;">📱</span>
+          <h3 style="text-align: center;">官方微信</h3>
+          <div style="width: 200px; height: 200px; background: white; margin: 1.5rem auto; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <p style="color: #333;">[扫码添加]</p>
+          </div>
+        </div>
+        <div class="card">
+          <span class="icon" style="display: block; text-align: center;">💼</span>
+          <h3 style="text-align: center;">商务合作</h3>
+          <div style="text-align: center; margin-top: 1rem;">
+            <p>电话：XXX-XXXX-XXXX</p>
+            <p>邮箱：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99faf6f7edf8faedd9f4f8f0f2f8f7fefbf8f6b7faf6f4">[email&#160;protected]</a></p>
+            <p>地址：深圳市南山区科技园</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final Slide -->
+  <section id="final-slide" class="slide">
+    <div class="slide-content" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+      <h1 class="landing-title">脉康宝</h1>
+      <h2 class="final-slogan">AI赋能中医养生，引领国货健康科技出海</h2>
+      <div style="margin-top: 3rem; font-size: min(2rem, 6vw); color: var(--accent-gold);">
+        感谢您的关注
+      </div>
+    </div>
+  </section>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+</body>
 </html>

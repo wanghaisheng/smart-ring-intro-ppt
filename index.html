@@ -1,8 +1,7 @@
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>养生宝 - 数据为钥，解锁中医传承的千年智慧</title>
+  <title>养生宝 - AI赋能中医气血，-养生不玄学,数据有答案</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -11,58 +10,67 @@
 </head>
 <body style="overflow: hidden;">
   <!-- Landing Page -->
-  <section id="landing" class="slide landing-page">
+  <section id="landing" class="slide landing-page active" style="display: flex;">
     <div class="bg-animation">
-      <svg class="taiji" viewBox="0 0 300 300">
+      <svg class="taiji" viewBox="0 0 300 300" style="translate: none; rotate: none; scale: none; transform: translate3d(-150px, -150px, 0px) rotate(336.97deg);">
         <defs>
           <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"></feGaussianBlur>
             <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
+              <feMergeNode in="coloredBlur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
             </feMerge>
           </filter>
         </defs>
-        <path class="taiji-path" d="M150,150 m-75,0 a75,75 0 1,0 150,0 a75,75 0 1,0 -150,0"/>
+        <path class="taiji-path" d="M150,150 m-75,0 a75,75 0 1,0 150,0 a75,75 0 1,0 -150,0"></path>
         <!-- Digital circuit patterns -->
         <g class="circuit-patterns" filter="url(#glow)">
-          <path class="circuit-path1" d="M50,150 h50"/>
-          <path class="circuit-path2" d="M200,150 h50"/>
-          <path class="circuit-path3" d="M150,50 v50"/>
-          <path class="circuit-path4" d="M150,200 v50"/>
+          <path class="circuit-path1" d="M50,150 h50" style="stroke-dashoffset: 17px;"></path>
+          <path class="circuit-path2" d="M200,150 h50" style="stroke-dashoffset: 17px;"></path>
+          <path class="circuit-path3" d="M150,50 v50"></path>
+          <path class="circuit-path4" d="M150,200 v50"></path>
         </g>
-        <circle class="dot1" cx="120" cy="150" r="15"/>
-        <circle class="dot2" cx="180" cy="150" r="15"/>
+        <circle class="dot1" cx="120" cy="150" r="15"></circle>
+        <circle class="dot2" cx="180" cy="150" r="15"></circle>
       </svg>
     </div>
     
     <div class="landing-content">
       <h1 class="landing-title">养生宝</h1>
-      <h2 class="landing-subtitle">AI赋能中医养生，引领国货健康科技出海</h2>
+      <h2 class="landing-subtitle">AI赋能中医气血，-养生不玄学,数据有答案</h2>
       <h3 class="landing-description">
         全球首款中医智能戒指
         <br>
         让养生可量化、可追踪、可验证
       </h3>
       <div class="product-preview">
-        <div id="ring-3d"></div>
+        <div id="ring-3d"><canvas width="250" height="250" style="display: block; width: 250px; height: 250px;"></canvas></div>
         <div class="data-visualization">
-          <canvas id="organChart"></canvas>
+          <canvas id="organChart" style="box-sizing: border-box; display: block; height: 216px; width: 216px;" width="432" height="432"></canvas>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Background Section -->
-  <section id="background" class="slide">
+  <section id="background" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>项目背景</h2>
-      <div class="trend-stats grid-layout"></div>
+      <div class="trend-stats grid-layout"><div class="stat-item fade-in">
+        <div class="stat-value">1.2<span>万亿</span></div>
+        <div class="stat-label">中医养生市场规模</div>
+      </div><div class="stat-item fade-in">
+        <div class="stat-value">25<span>%</span></div>
+        <div class="stat-label">智能硬件年增速</div>
+      </div><div class="stat-item fade-in">
+        <div class="stat-value">92<span>%</span></div>
+        <div class="stat-label">用户满意度</div>
+      </div></div>
     </div>
   </section>
 
   <!-- 中医复兴势不可挡 Section -->
-  <section id="tcm-revival" class="slide">
+  <section id="tcm-revival" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>中医复兴势不可挡</h2>
       <div class="market-grid">
@@ -81,16 +89,16 @@
   </section>
 
   <!-- New slide with Industry Pain Points -->
-  <section id="industry-pain-points" class="slide">
+  <section id="industry-pain-points" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>行业痛点</h2>
       <div class="market-grid">
         <div class="card">
           <h3>传统中医养生面临挑战</h3>
           <ul>
-            <li>传统养生依赖主观经验，感受上火，湿气重，缺乏量化标准</li>
+            <li>传统养生依赖主观经验，缺乏量化标准</li>
             <li>用户易被误导，行业乱象频发</li>
-            <li>现有健康设备仅监测西医指标（心率、血氧），缺乏中医气血阴阳脏腑功能评估</li>
+            <li>现有健康设备仅监测西医指标（心率、血氧），缺乏中医脏腑功能评估</li>
           </ul>
         </div>
       </div>
@@ -114,7 +122,7 @@
   </section>
 
   <!-- TCM Challenges Slide -->
-  <section id="tcm-challenges" class="slide">
+  <section id="tcm-challenges" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>中医面临的挑战</h2>
       <div class="market-grid">
@@ -125,7 +133,7 @@
           </div>
           <ul>
             <li><strong>伪科学争议：</strong>气血、阴阳、五行等核心理论缺乏现代科学数据支撑</li>
-            <li><strong>调理效果：</strong>护肝、补肾、去脾湿、排毒、养胃等功效难以客观验证</li>
+            <li><strong>调理效果：</strong>护肝、补肾、去脾湿、养胃等功效难以客观验证</li>
             <li><strong>个体差异：</strong>"同病异治，异病同治"导致标准化困难</li>
           </ul>
         </div>
@@ -134,9 +142,9 @@
   </section>
 
   <!-- Chinese Herbal Medicine Risks Slide -->
-  <section id="herb-risks" class="slide">
+  <section id="herb-risks" class="slide" style="display: none;">
     <div class="slide-content">
-      <h2>药食同源的潜在风险</h2>
+      <h2>中药的潜在风险</h2>
       <div class="market-grid">
         <div class="card">
           <h3>中药安全性顾虑</h3>
@@ -154,7 +162,7 @@
   </section>
 
   <!-- Scientific Evidence Slide -->
-  <section id="scientific-evidence" class="slide">
+  <section id="scientific-evidence" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>科学证据与解决方案</h2>
       <div class="market-grid">
@@ -164,10 +172,7 @@
             <canvas id="scientificEvidenceChart"></canvas>
           </div>
           <ul>
-            <li><strong>实时监测：</strong>通过智能戒指监测用户脏腑气血功能变化，实现调理效果可视化</li>
-            <li><strong>上火预警：</strong>区分心肝脾肺肾到底什么上火</li>
-            <li><strong>趋势分析：</strong>虚瘀毒湿指数长期跟踪</li>
-
+            <li><strong>实时监测：</strong>通过智能戒指监测用户脏腑功能变化，实现调理效果可视化</li>
             <li><strong>风险预警：</strong>肝肾功能异常及时预警，避免中药过度使用造成损伤</li>
             <li><strong>数据证明：</strong>将传统中医理论转化为可量化、可验证的数据模型</li>
           </ul>
@@ -177,7 +182,7 @@
   </section>
 
   <!-- Background Section Part 2 -->
-  <section id="background-part2" class="slide">
+  <section id="background-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>项目背景（续）</h2>
       <div class="market-grid">
@@ -196,7 +201,7 @@
   </section>
 
   <!-- Background Section Part 3 -->
-  <section id="background-part3" class="slide">
+  <section id="background-part3" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>项目背景（续）</h2>
       <div class="market-grid">
@@ -204,7 +209,7 @@
           <h3>AI赋能传统医学</h3>
           <div class="grid-layout">
             <div class="stat-item">
-              <h4>舌象AI识别准确率</h4>
+              <h4>图像时序数据分析AI技术</h4>
               <div class="stat-value">90<span>%</span></div>
             </div>
             <div class="stat-item">
@@ -223,13 +228,12 @@
   </section>
 
   <!-- Solution Section -->
-  <section id="solution" class="slide">
+  <section id="solution" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品解决方案</h2>
       <div class="card">
         <h3>一句话定义</h3>
         <p class="highlight-text">基于AI与中医理论的智能健康管理工具，专注脏腑功能动态监测与个性化养生建议</p>
-        <p>排了多少毒，补了多少虚，去了多少湿</p>
         <h3>合规声明</h3>
         <p>非医疗器械，数据仅供参考，不替代医疗诊断</p>
       </div>
@@ -237,7 +241,7 @@
   </section>
 
   <!-- Solution Features -->
-  <section id="solution-features" class="slide">
+  <section id="solution-features" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品解决方案（续）</h2>
       <div class="grid-layout">
@@ -246,13 +250,14 @@
           <h3>多模态传感</h3>
           <ul>
             <li>脉搏波谐波分解（C0-C10对应五脏六腑）</li>
+            <li>体表电导率动态监测（十二经络虚实状态）</li>
           </ul>
         </div>
         <div class="card">
           <span class="icon">🧠</span>
           <h3>AI算法模型</h3>
           <ul>
-            <li>气血量化动态评分系统</li>
+            <li>五行生克动态评分系统</li>
             <li>虚瘀毒湿指数预测模型（准确率85%）</li>
           </ul>
         </div>
@@ -261,7 +266,7 @@
   </section>
 
   <!-- Solution Target Users -->
-  <section id="solution-users" class="slide">
+  <section id="solution-users" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品解决方案（续）</h2>
       <div class="grid-layout">
@@ -270,8 +275,7 @@
           <h3>功能亮点(ToC)</h3>
           <ul>
             <li>实时预警"肝毒指数超标""肾虚风险"</li>
-            <li>面向不同人群的游戏化应用软件</li>
-            <li>个性化调理方案（食疗、穴位按摩、其他建议）</li>
+            <li>个性化调理方案（食疗、穴位按摩、中成药建议）</li>
           </ul>
         </div>
         <div class="card">
@@ -287,7 +291,7 @@
   </section>
 
   <!-- Market Analysis Section 1 -->
-  <section id="market" class="slide">
+  <section id="market" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析</h2>
       <div class="market-grid">
@@ -303,7 +307,7 @@
   </section>
 
   <!-- Market Analysis Section 1.5 -->
-  <section id="market-part15" class="slide">
+  <section id="market-part15" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析（续）</h2>
       <div class="market-grid">
@@ -319,7 +323,7 @@
   </section>
   
   <!-- Market Analysis Section 2 -->
-  <section id="market-part2" class="slide">
+  <section id="market-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析（续）</h2>
       <div class="card">
@@ -333,7 +337,7 @@
   </section>
 
   <!-- Market Analysis Section 2.5 -->
-  <section id="market-part25" class="slide">
+  <section id="market-part25" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析（续）</h2>
       <div class="card">
@@ -347,7 +351,7 @@
   </section>
   
   <!-- Market Analysis Section 3 -->
-  <section id="market-part3" class="slide">
+  <section id="market-part3" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>竞品对比</h2>
       <div class="card">
@@ -364,7 +368,7 @@
           <tbody>
             <tr>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">数据维度</td>
-              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">单次就诊脉搏波、舌象</td>
+              <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">单次就诊脉搏波</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">心率、血氧、运动</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">心率、睡眠、体温</td>
               <td style="padding:0.8rem; border:1px solid rgba(255,255,255,0.1);">五脏能量、虚瘀毒湿指数</td>
@@ -421,7 +425,7 @@
   </section>
 
   <!-- Market Analysis Section 3.5 -->
-  <section id="market-part35" class="slide">
+  <section id="market-part35" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>商业模式</h2>
       <div class="grid-layout">
@@ -446,7 +450,7 @@
   </section>
 
   <!-- Market Analysis Section 3.6 -->
-  <section id="market-part36" class="slide">
+  <section id="market-part36" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>出海路径</h2>
       <div class="card">
@@ -462,7 +466,7 @@
   </section>
   
   <!-- Market Analysis Section 4 -->
-  <section id="market-part4" class="slide">
+  <section id="market-part4" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析（续）</h2>
       <div class="market-grid">
@@ -478,7 +482,7 @@
   </section>
 
   <!-- Market Analysis Section 4.5 -->
-  <section id="market-part45" class="slide">
+  <section id="market-part45" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>市场分析（续）</h2>
       <div class="market-grid">
@@ -498,7 +502,7 @@
   </section>
   
   <!-- Market Analysis Section 5 -->
-  <section id="market-part5" class="slide">
+  <section id="market-part5" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>AI辅助养生的健康效益</h2>
       <div class="market-grid">
@@ -514,7 +518,7 @@
   </section>
 
   <!-- Market Analysis Section 5.5 -->
-  <section id="market-part55" class="slide">
+  <section id="market-part55" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>AI辅助养生的健康效益（续）</h2>
       <div class="market-grid">
@@ -530,7 +534,7 @@
   </section>
 
   <!-- Product Features Section 1 -->
-  <section id="product-features" class="slide">
+  <section id="product-features" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品特色</h2>
       <div class="features-container">
@@ -573,7 +577,7 @@
                   <div style="width: 40px; height: 40px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-weight: bold;">02</div>
                   <h4 style="margin: 0; color: var(--accent-gold);">效果可视化</h4>
                 </div>
-                <p>调理前后气血对比数据，验证养生效果</p>
+                <p>调理前后对比数据，验证养生效果</p>
               </div>
             </div>
           </div>
@@ -583,28 +587,28 @@
   </section>
 
   <!-- Product Features Section 1.5 -->
-  <section id="product-features-part15" class="slide">
+  <section id="product-features-part15" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品核心功能</h2>
       <div class="features-container">
         <div class="feature-rings">
           <div class="feature-ring">
-            <h3>中医哲学体系</h3>
+            <h3>中医诊断体系</h3>
             <div class="feature-details">
               <div class="feature-item fade-in">
                 <span class="feature-icon">❤️</span>
                 <h4>脉诊监测</h4>
-                <p>28项特征分析，识别10+种脉象</p>
+                <p>28项特征分析，识别20种脉象</p>
               </div>
               <div class="feature-item fade-in">
                 <span class="feature-icon">🔄</span>
-                <h4>气血评估</h4>
-                <p>实时监测五脏气血状态</p>
+                <h4>经络评估</h4>
+                <p>实时监测12条经络能量平衡</p>
               </div>
               <div class="feature-item fade-in">
                 <span class="feature-icon">⚡</span>
-                <h4>虚毒瘀湿</h4>
-                <p>量化常见养生概念</p>
+                <h4>五行评估</h4>
+                <p>金木水火土五行平衡分析</p>
               </div>
             </div>
           </div>
@@ -652,23 +656,22 @@
   </section>
 
   <!-- Product Features Section 2 -->
-  <section id="product-features-part2" class="slide">
+  <section id="product-features-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>智能养生系统</h2>
       <div class="features-container">
         <div class="feature-rings">
           <div class="feature-ring">
-            <h3>AI分析系统</h3>
+            <h3>AI诊断系统</h3>
             <div class="feature-details">
               <div class="feature-item fade-in">
                 <span class="feature-icon">🤖</span>
-                <h4>AI分析</h4>
+                <h4>AI诊断</h4>
                 <p>90%辨证准确率，匹配中医证型</p>
               </div>
               <div class="feature-item fade-in">
                 <span class="feature-icon">📱</span>
-                <h4>游戏化APP联动</h4>
-                <p>气血管理、症状管理、疗效管理、湿气管理、排毒管理、补肾管理工具、辟谷社区工具</p>
+                <h4>APP联动</h4>
                 <p>实时数据同步，历史对比分析</p>
               </div>
               <div class="feature-item fade-in">
@@ -695,8 +698,8 @@
             </div>
             <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; text-align: center; border: 1px solid rgba(2,136,209,0.3);">
               <span style="font-size: 2.5rem; color: var(--tech-blue);">🧘</span>
-              <h4 style="margin: 0.5rem 0; color: var(--tech-blue);">养生功法</h4>
-              <p>针对性身心调理功法</p>
+              <h4 style="margin: 0.5rem 0; color: var(--tech-blue);">经络运动</h4>
+              <p>针对性经络调理动作</p>
             </div>
           </div>
         </div>
@@ -705,7 +708,7 @@
   </section>
 
   <!-- Product Features Section 2.5 -->
-  <section id="product-features-part25" class="slide">
+  <section id="product-features-part25" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>产品规格</h2>
       <div style="margin-bottom: 1.5rem;">
@@ -763,7 +766,7 @@
   </section>
 
   <!-- Technology Deep Dive Section 1 -->
-  <section id="technology" class="slide">
+  <section id="technology" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>核心技术创新</h2>
       <div class="tech-innovation">
@@ -781,16 +784,17 @@
   </section>
 
   <!-- Technology Deep Dive Section 1.5 -->
-  <section id="technology-part15" class="slide">
+  <section id="technology-part15" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>核心技术创新（续）</h2>
       <div class="tech-innovation">
-        <h3>气血能量评估系统</h3>
+        <h3>五行能量评估系统</h3>
         <div class="tech-diagram-container">
           <canvas id="elementChart"></canvas>
         </div>
         <ul class="tech-features-list">
-          <li>气血评分+五行生克动态评分系统</li>
+          <li>五行生克动态评分系统</li>
+          <li>上火与否智能判断</li>
           <li>个性化平衡调理方案推荐</li>
         </ul>
       </div>
@@ -798,7 +802,7 @@
   </section>
   
   <!-- Technology Deep Dive Section 2 -->
-  <section id="technology-part2" class="slide">
+  <section id="technology-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>核心技术创新（续）</h2>
       <div class="tech-innovation">
@@ -835,7 +839,7 @@
   </section>
 
   <!-- Technology Deep Dive Section 2.5 -->
-  <section id="technology-part25" class="slide">
+  <section id="technology-part25" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>核心技术创新（续）</h2>
       <div class="tech-innovation">
@@ -863,7 +867,7 @@
   </section>
 
   <!-- Use Cases Section -->
-  <section id="use-cases" class="slide">
+  <section id="use-cases" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>应用场景展示</h2>
       <div class="card">
@@ -882,7 +886,7 @@
   </section>
 
   <!-- Use Cases Section 2 -->
-  <section id="use-cases-part2" class="slide">
+  <section id="use-cases-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>应用场景展示（续）</h2>
       <div class="card">
@@ -902,13 +906,13 @@
   </section>
 
   <!-- Team Section - Combined -->
-  <section id="team" class="slide">
+  <section id="team" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>团队与成果</h2>
       <div class="grid-layout">
         <div class="card fade-in">
           <h3>中医专家</h3>
-          <p>XX中医药大学教授，负责理论模型构建</p>
+          <p>北京中医药大学教授，负责理论模型构建</p>
           <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
             <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--primary-green); color:white; border-radius:20px; font-size:0.9rem;">五行理论</span>
             <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--primary-green); color:white; border-radius:20px; font-size:0.9rem;">辨证论治</span>
@@ -926,7 +930,7 @@
         </div>
         <div class="card fade-in">
           <h3>硬件工程师</h3>
-          <p>小米生态链背景，确保传感器精度与量产</p>
+          <p>小米生态链背景，确保传感器精度与量产的质量把控</p>
           <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
             <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--accent-gold); color:var(--text-dark); border-radius:20px; font-size:0.9rem;">传感器研发</span>
             <span style="display:inline-block; padding:0.3rem 0.7rem; background:var(--accent-gold); color:var(--text-dark); border-radius:20px; font-size:0.9rem;">硬件集成</span>
@@ -938,7 +942,7 @@
   </section>
 
   <!-- Team Achievements Section -->
-  <section id="team-achievements" class="slide">
+  <section id="team-achievements" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>团队成果</h2>
       <div class="grid-layout">
@@ -965,7 +969,7 @@
   </section>
 
   <!-- Research & Development Section -->
-  <section id="research" class="slide">
+  <section id="research" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>研发创新</h2>
       <div class="card">
@@ -974,14 +978,14 @@
           <canvas id="clinicalChart"></canvas>
         </div>
         <h4 style="color: var(--accent-gold); margin: 1rem 0 0.5rem;">多中心验证研究</h4>
-        <p>与多家三甲医院合作，完成1000例对照研究</p>
+        <p>与三家三甲医院合作，完成1000例对照研究</p>
         <p>辨证一致性Kappa值0.82</p>
       </div>
     </div>
   </section>
 
   <!-- Research & Development Section 2 -->
-  <section id="research-part2" class="slide">
+  <section id="research-part2" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>研发创新（续）</h2>
       <div class="card">
@@ -997,7 +1001,7 @@
   </section>
 
   <!-- Global Vision Section -->
-  <section id="global-vision" class="slide">
+  <section id="global-vision" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>全球化愿景</h2>
       <div style="position: relative; height: 350px; background: rgba(0,0,0,0.3); border-radius: 16px; padding: 1rem; margin-bottom: 1.5rem;">
@@ -1005,7 +1009,7 @@
       </div>
       <div class="grid-layout">
         <div class="card fade-in">
-          <h3>2024</h3>
+          <h3>2026</h3>
           <p>东南亚市场布局</p>
           <ul>
             <li>东南亚华人市场（文化相近）</li>
@@ -1013,7 +1017,7 @@
           </ul>
         </div>
         <div class="card fade-in">
-          <h3>2025-2026</h3>
+          <h3>2026-2027</h3>
           <p>欧美市场进入与全球生态构建</p>
           <ul>
             <li>主打"Stress Relief""Natural Wellness"概念</li>
@@ -1025,7 +1029,7 @@
   </section>
 
   <!-- Future Plans Section -->
-  <section id="future-plans" class="slide">
+  <section id="future-plans" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>参赛诉求与规划</h2>
       <div class="grid-layout">
@@ -1041,9 +1045,9 @@
         <div class="card">
           <h3>未来规划</h3>
           <ul>
-            <li><strong>产品迭代</strong>：2025适配多家供应商硬件，提升算法精度</li>
-            <li><strong>市场拓展</strong>：2026年进入北美市场，与功能性食品品牌联合营销</li>
-            <li><strong>生态构建</strong>：开放开发者平台，脉搏波开放数据集，智能证素辩证科研合作，孵化中医AI算法生态</li>
+            <li><strong>产品迭代</strong>：2025年适配2款戒指，开发游戏化健康管理appp</li>
+            <li><strong>市场拓展</strong>：2026年进入市场，与功能性食品品牌联合营销</li>
+            <li><strong>生态构建</strong>：开放开发者平台，孵化中医AI算法生态</li>
           </ul>
         </div>
       </div>
@@ -1051,7 +1055,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="slide">
+  <section id="contact" class="slide" style="display: none;">
     <div class="slide-content">
       <h2>联系我们</h2>
       <div class="grid-layout">
@@ -1066,17 +1070,17 @@
           <span class="icon" style="display: block; text-align: center;">💼</span>
           <h3 style="text-align: center;">商务合作</h3>
           <div style="text-align: center; margin-top: 1rem;">
-            <p>电话：XXX-XXXX-XXXX</p>
-            <p>邮箱：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e0838f8e94818394a08d81898b818e8782818fce838f8d">[email&#160;protected]</a></p>
-            <p>地址：深圳市南山区科技园</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <p>电话：18926010461</p>
+            <p>邮箱：<a href="whs860603@gmail.com" <="" a="">whs860603@gmail.com</a></p><a href="whs860603@gmail.com" <="" a="">
+            <p>地址：深圳市龙岗区</p>
+          </a></div><a href="whs860603@gmail.com" <="" a="">
+        </a></div><a href="whs860603@gmail.com" <="" a="">
+      </a></div><a href="whs860603@gmail.com" <="" a="">
+    </a></div><a href="whs860603@gmail.com" <="" a="">
+  </a></section><a href="whs860603@gmail.com" <="" a="">
   
   <!-- Final Slide -->
-  <section id="final-slide" class="slide">
+  <section id="final-slide" class="slide" style="display: none;">
     <div class="slide-content" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
       <h1 class="landing-title">养生宝</h1>
       <h2 class="final-slogan">AI赋能中医养生，引领国货健康科技出海</h2>
@@ -1087,5 +1091,5 @@
   </section>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-</body>
-</html>
+
+<div class="progress-bar" style="width: 4.87805%;"></div><div class="slide-counter">2 / 41</div><div class="nav-controls"><button class="nav-button">←</button><button class="nav-button">→</button></div></a><div class="progress-bar" style="width: 2.43902%;"></div><div class="slide-counter">1 / 41</div><div class="nav-controls"><button class="nav-button">←</button><button class="nav-button">→</button></div></body></html>

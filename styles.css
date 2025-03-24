@@ -619,6 +619,30 @@ li::before {
   100% { transform: scale(1); text-shadow: 0 0 20px rgba(255,215,0,0.5); }
 }
 
+/* Save PDF button */
+.save-pdf-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 215, 0, 0.2);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-size: min(1.2rem, 5vw);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.save-pdf-button:hover {
+  background: rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .slide-content {
@@ -673,6 +697,77 @@ li::before {
   #ring-3d, .data-visualization {
     width: min(250px, 70vw);
     height: min(250px, 70vw);
+  }
+}
+
+@media print {
+  .nav-controls, .progress-bar, .slide-counter, .save-pdf-button {
+    display: none !important;
+  }
+  
+  .slide {
+    opacity: 1 !important;
+    position: relative !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .slide-content {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    background: white !important;
+    color: black !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+  }
+  
+  body {
+    overflow: visible !important;
+    background: white !important;
+  }
+  
+  .chart-container {
+    page-break-inside: avoid;
+    height: auto !important;
+    min-height: 200px;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+  
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+    display: block !important;
+  }
+  
+  .card {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, li {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  .feature-icon, .icon, .workflow-icon {
+    color: #009688 !important;
+    text-shadow: none !important;
+  }
+  
+  .taiji, .bg-animation {
+    display: none !important;
   }
 }
 

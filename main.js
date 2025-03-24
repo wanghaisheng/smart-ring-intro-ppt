@@ -935,7 +935,7 @@ const initMarketAnalysis3 = () => {
       charts.marketShareChart = new Chart(marketShareCtx, {
         type: 'pie',
         data: {
-          labels: ['智能穿戴设备', '健康监测应用', '其他健康设备', '脉康宝潜在市场'],
+          labels: ['智能穿戴设备', '健康监测应用', '其他健康设备', '养生宝潜在市场'],
           datasets: [{
             data: [30, 25, 25, 20],
             backgroundColor: [
@@ -1119,7 +1119,7 @@ const initMarketAnalysis4 = () => {
       charts.patientSatisfactionChart = new Chart(patientSatisfactionCtx, {
         type: 'bar',
         data: {
-          labels: ['传统方式', '脉康宝辅助'],
+          labels: ['传统方式', '养生宝辅助'],
           datasets: [{
             label: '患者满意度评分',
             data: [65, 90],
@@ -1360,7 +1360,7 @@ const initMarketAnalysis2 = () => {
         data: {
           labels: ['技术创新', '市场占有率', '品牌认知度', '用户满意度', '成本效益'],
           datasets: [{
-            label: '脉康宝',
+            label: '养生宝',
             data: [90, 65, 70, 85, 80],
             borderColor: 'rgba(0, 150, 136, 1)',
             backgroundColor: 'rgba(0, 150, 136, 0.2)'
@@ -1932,7 +1932,7 @@ const initLiverDataChart = () => {
               fill: true
             },
             {
-              label: '脉康宝智能监测',
+              label: '养生宝智能监测',
               data: [65, 64, 63, 64, 65, 66, 67],
               borderColor: 'rgba(0, 150, 136, 1)',
               backgroundColor: 'rgba(0, 150, 136, 0.2)',
@@ -2049,7 +2049,7 @@ const initScientificEvidenceChart = () => {
               pointBorderColor: '#fff'
             },
             {
-              label: '脉康宝智能中医',
+              label: '养生宝智能中医',
               data: [85, 80, 85, 80, 75],
               borderColor: 'rgba(0, 150, 136, 1)',
               backgroundColor: 'rgba(0, 150, 136, 0.2)',
@@ -2243,6 +2243,9 @@ class Presentation {
     
     // Handle window resize events
     window.addEventListener('resize', this.handleResize.bind(this));
+    
+    // Add save as PDF button
+    // this.createSaveAsPdfButton();
   }
   
   createControls() {
@@ -2477,7 +2480,7 @@ class Presentation {
                 data: {
                   labels: ['技术创新', '市场占有率', '品牌认知度', '用户满意度', '成本效益'],
                   datasets: [{
-                    label: '脉康宝',
+                    label: '养生宝',
                     data: [90, 65, 70, 85, 80],
                     borderColor: 'rgba(0, 150, 136, 1)',
                     backgroundColor: 'rgba(0, 150, 136, 0.2)'
@@ -2922,6 +2925,49 @@ class Presentation {
       
       this.initializeChartsBySlideId(slideId);
     }
+  }
+  
+  createSaveAsPdfButton() {
+    const saveButton = document.createElement('button');
+    saveButton.className = 'save-pdf-button';
+    saveButton.innerHTML = '📄 保存为PDF';
+    saveButton.onclick = () => {
+      // Show all slides for printing
+      this.slides.forEach(slide => {
+        slide.style.display = 'block';
+        slide.style.opacity = '1';
+        slide.style.position = 'relative';
+        slide.style.height = 'auto';
+        slide.style.overflow = 'visible';
+      });
+      
+      // Delay printing to ensure all slides are properly rendered
+      setTimeout(() => {
+        window.print();
+        
+        // Restore presentation view after printing
+        this.slides.forEach(slide => {
+          slide.style.display = 'none';
+          slide.style.opacity = '0';
+          slide.style.position = 'absolute';
+          slide.style.height = '100vh';
+          slide.style.overflow = 'hidden';
+        });
+        this.showSlide(this.currentIndex);
+      }, 500);
+    };
+    document.body.appendChild(saveButton);
+  }
+  
+  renderAllChartsForPrint() {
+    // Destroy all existing charts first
+    destroyAllCharts();
+    
+    // Render all charts for each slide
+    this.slides.forEach(slide => {
+      const slideId = slide.id;
+      this.initializeChartsBySlideId(slideId);
+    });
   }
 }
 
